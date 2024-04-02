@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "myFoodPlanner",
-    "slug": "myFoodPlanner",
+    "name": "myfoodplanner",
+    "slug": "myfoodplanner",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,16 +15,24 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kraenbyskov.myfoodplanner"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.kraenbyskov.myfoodplanner"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e5cd35e3-2944-4eda-ae00-d72c7e3e28b4"
+      }
+    },
+    "owner": "kraenbyskov"
   }
 }
