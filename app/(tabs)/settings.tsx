@@ -1,21 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar"
+import { getAuth, signOut } from "firebase/auth"
+import { StyleSheet, Text, View } from "react-native"
+import { Button } from "react-native-paper"
 
 export default function Index() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-
-      <StatusBar style="auto" />
-    </View>
-  );
+    const { currentUser } = getAuth()
+    return (
+        <View style={styles.container}>
+            <Text>Settings</Text>
+            <Text style={styles.title}>{currentUser?.email}</Text>
+            <Button onPress={() => signOut(getAuth())}>Sign out</Button>
+            <StatusBar style="auto" />
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    container: {
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    title: {
+        fontSize: 20,
+        fontWeight: "bold",
+    },
+})
