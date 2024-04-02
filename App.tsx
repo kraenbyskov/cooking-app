@@ -1,8 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { AppRegistry } from 'react-native';
+import { StyleSheet, Text, View, AppRegistry } from 'react-native';
 import { PaperProvider, MD3LightTheme as DefaultTheme, Button } from 'react-native-paper';
-import { name } from './app.json';
 
 const theme = {
   ...DefaultTheme,
@@ -13,23 +11,21 @@ const theme = {
   },
 };
 
-
 export default function App() {
   return (
-      <PaperProvider theme={theme}>
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <Button icon="camera" mode="contained" onPress={() => console.log('Pressed')}>
-        Press me
-      </Button>
-      <StatusBar style="auto" />
-    </View>
-      </PaperProvider>
+    <PaperProvider theme={theme}>
+      <View style={styles.container}>
+        <Text>Open up App.tsx to start working on your app!</Text>
+        <Button icon="camera" mode="contained" onPress={() => console.log('Pressed')}>
+          Press me
+        </Button>
+        <StatusBar style="auto" />
+      </View>
+    </PaperProvider>
   );
 }
 
-
-AppRegistry.registerComponent(name, () => App);
+AppRegistry.registerComponent('myFoodPlanner', () => App);
 
 const styles = StyleSheet.create({
   container: {
