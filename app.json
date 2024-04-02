@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "cooking-app",
-    "slug": "cooking-app",
+    "name": "myFoodPlanner",
+    "slug": "myFoodPlanner",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
