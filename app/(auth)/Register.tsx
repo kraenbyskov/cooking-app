@@ -6,28 +6,8 @@ import { useState } from "react"
 import { StyleSheet, Text, View } from "react-native"
 import { TextInput, Button } from "react-native-paper"
 
+import { nameValidator, emailValidator, passwordValidator } from "../../core/utils"
 import { db } from "../_layout"
-
-export const emailValidator = (email: string) => {
-    const re = /\S+@\S+\.\S+/
-
-    if (!email || email.length <= 0) return "Email cannot be empty."
-    if (!re.test(email)) return "Ooops! We need a valid email address."
-
-    return ""
-}
-
-export const passwordValidator = (password: string) => {
-    if (!password || password.length <= 0) return "Password cannot be empty."
-
-    return ""
-}
-
-export const nameValidator = (name: string) => {
-    if (!name || name.length <= 0) return "Name cannot be empty."
-
-    return ""
-}
 
 export default function Index() {
     const [name, setName] = useState({ value: "", error: "" })
@@ -61,34 +41,41 @@ export default function Index() {
     return (
         <View style={styles.container}>
             <Text>Register</Text>
+            <View
+                style={{
+                    width: "100%",
+                    marginVertical: 25,
+                    paddingHorizontal: 20,
+                }}
+            >
+                <TextInput
+                    label="Name"
+                    returnKeyType="next"
+                    value={name.value}
+                    onChangeText={(text) => setName({ value: text, error: "" })}
+                    error={!!name.error}
+                />
 
-            <TextInput
-                label="Name"
-                returnKeyType="next"
-                value={name.value}
-                onChangeText={(text) => setName({ value: text, error: "" })}
-                error={!!name.error}
-            />
+                <TextInput
+                    label="Email"
+                    returnKeyType="next"
+                    value={email.value}
+                    onChangeText={(text) => setEmail({ value: text, error: "" })}
+                    error={!!email.error}
+                    autoCapitalize="none"
+                    textContentType="emailAddress"
+                    keyboardType="email-address"
+                />
 
-            <TextInput
-                label="Email"
-                returnKeyType="next"
-                value={email.value}
-                onChangeText={(text) => setEmail({ value: text, error: "" })}
-                error={!!email.error}
-                autoCapitalize="none"
-                textContentType="emailAddress"
-                keyboardType="email-address"
-            />
-
-            <TextInput
-                label="Password"
-                returnKeyType="done"
-                value={password.value}
-                onChangeText={(text) => setPassword({ value: text, error: "" })}
-                error={!!password.error}
-                secureTextEntry
-            />
+                <TextInput
+                    label="Password"
+                    returnKeyType="done"
+                    value={password.value}
+                    onChangeText={(text) => setPassword({ value: text, error: "" })}
+                    error={!!password.error}
+                    secureTextEntry
+                />
+            </View>
 
             <Button mode="contained" onPress={_onSignUpPressed}>
                 Login
