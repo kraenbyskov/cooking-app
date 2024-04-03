@@ -1,15 +1,15 @@
 import { StatusBar } from "expo-status-bar"
+import { useTranslation } from "react-i18next"
 import { StyleSheet, Text, View } from "react-native"
-import { Button } from "react-native-paper"
 
 export default function Index() {
+    const { t } = useTranslation()
     return (
         <View style={styles.container}>
-            <Text>Open up App.tsx to start working on your app!</Text>
-            <Button icon="camera" mode="contained" onPress={() => console.log("Pressed")}>
-                Press me
-            </Button>
-            <StatusBar style="auto" />
+            <Text>{t("welcome")}</Text>
+            <Text>{t("description")}</Text>
+
+            <StatusBar style="dark" />
         </View>
     )
 }
