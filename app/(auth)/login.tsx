@@ -3,8 +3,9 @@ import { StatusBar } from "expo-status-bar"
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth"
 import { useState } from "react"
 import { StyleSheet, Text, View } from "react-native"
-import { TextInput, Button } from "react-native-paper"
+import { Button } from "react-native-paper"
 
+import TextInput from "../../components/input"
 import { emailValidator, passwordValidator } from "../../core/utils"
 
 export default function Login() {
