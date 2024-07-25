@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar"
 import { getAuth, signOut } from "firebase/auth"
+import React from "react"
 import { StyleSheet, Text, View } from "react-native"
 import { Button } from "react-native-paper"
 

@@ -3,10 +3,11 @@ import { Stack } from "expo-router/stack"
 import { initializeApp } from "firebase/app"
 import { getReactNativePersistence, initializeAuth } from "firebase/auth"
 import { getFirestore } from "firebase/firestore"
+import React from "react"
 import { AppRegistry } from "react-native"
 import { PaperProvider } from "react-native-paper"
-import "../core/i18n"
 
+import "../core/i18n"
 import { theme } from "../core/theme"
 
 export { ErrorBoundary } from "expo-router"

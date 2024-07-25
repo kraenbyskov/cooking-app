@@ -1,12 +1,13 @@
 import { router } from "expo-router"
 import { StatusBar } from "expo-status-bar"
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth"
-import { useState } from "react"
+import React, { useState } from "react"
 import { StyleSheet, Text, View } from "react-native"
 import { Button } from "react-native-paper"
 
 import TextInput from "../../components/input"
 import { emailValidator, passwordValidator } from "../../core/utils"
+
 
 export default function Login() {
     const [email, setEmail] = useState({ value: "", error: "" })
